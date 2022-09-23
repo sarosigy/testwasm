@@ -1,0 +1,62 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-api",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+              "build",
+              "${workspaceFolder}/testwasm.Api/testwasm.Api.csproj",
+              "/property:GenerateFullPaths=true",
+              "/consoleloggerparameters:NoSummary"
+            ],
+            "group": {
+              "kind": "build",
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build-wasm",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+              "build",
+              "${workspaceFolder}/testwasm.Wasm/testwasm.Wasm.csproj",
+              "/property:GenerateFullPaths=true",
+              "/consoleloggerparameters:NoSummary"
+            ],
+            "group": {
+              "kind": "build",
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish-wasm",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+              "publish",
+              "${workspaceFolder}/testwasm.Wasm/testwasm.Wasm.csproj",
+              "/property:GenerateFullPaths=true",
+              "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build-skia-gtk",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+              "build",
+              "${workspaceFolder}/testwasm.Skia.Gtk/testwasm.Skia.Gtk.csproj",
+              "/property:GenerateFullPaths=true",
+              "/consoleloggerparameters:NoSummary"
+            ],
+            "group": {
+              "kind": "build",
+            },
+            "problemMatcher": "$msCompile"
+        },
+    ]
+}  
